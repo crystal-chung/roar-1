@@ -14,9 +14,6 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ROAR BITCH'),
-      ),
       body: Center(
         child: Column(
           // Column is also a layout widget. It takes a list of children and
@@ -36,7 +33,7 @@ class FirstRoute extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'images/rhino.jpeg'
+              'images/roar-logo.png'
             ),
             RaisedButton(
               onPressed: () {
@@ -77,25 +74,7 @@ class FirstRoute extends StatelessWidget {
           ],
         ),
       ),
+      backgroundColor: Colors.brown,
     );
   }
 }
-
-//class SecondRoute extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      appBar: AppBar(
-//        title: Text("Second Route"),
-//      ),
-//      body: Center(
-//        child: RaisedButton(
-//          onPressed: () {
-//            Navigator.pop(context);
-//          },
-//          child: Text('Go back!'),
-//        ),
-//      ),
-//    );
-//  }
-//}
