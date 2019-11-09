@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'user.dart';
 import 'authority.dart';
 import 'community.dart';
+import 'report.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,7 +40,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AuthorityRoute()),
+                  MaterialPageRoute(builder: (context) => ReportRoute()),
                 );
               },
               child: Text('Report'),
