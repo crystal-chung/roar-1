@@ -34,7 +34,10 @@ class FirstRoute extends StatelessWidget {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
+            Image.asset(
+              'images/rhino.jpeg'
+            ),
             RaisedButton(
               onPressed: () {
                 Navigator.push(
