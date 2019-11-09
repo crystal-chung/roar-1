@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'user.dart';
+import 'authority.dart';
+import 'community.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,19 +37,28 @@ class FirstRoute extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AuthorityRoute()),
+                );
               },
               child: Text('Authority'),
             ),
             RaisedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UserRoute()),
+                );
               },
               child: Text('User'),
             ),
             RaisedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CommunityRoute()),
+                );
               },
               child: Text('Community'),
             )
@@ -57,21 +69,21 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
+//class SecondRoute extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Second Route"),
+//      ),
+//      body: Center(
+//        child: RaisedButton(
+//          onPressed: () {
+//            Navigator.pop(context);
+//          },
+//          child: Text('Go back!'),
+//        ),
+//      ),
+//    );
+//  }
+//}
