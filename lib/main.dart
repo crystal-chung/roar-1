@@ -42,6 +42,15 @@ class FirstRoute extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => AuthorityRoute()),
                 );
               },
+              child: Text('Report'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AuthorityRoute()),
+                );
+              },
               child: Text('Authority'),
             ),
             RaisedButton(
