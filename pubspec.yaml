@@ -43,6 +43,9 @@ flutter:
     - images/rhino.jpeg
     - images/roar-icon.png
     - images/roar-logo.png
+    - images/roar-bg.png
+    - images/roar-logo-rev.png
+    - images/buttons/roar-btn-report.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -74,3 +77,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: fonts/IBMPlexSans-Medium.ttf
+        - asset: fonts/IBMPlexSans-Bold.ttf
