@@ -34,19 +34,32 @@ class _MapState extends State<AuthorityRoute> {
         this.isLoading = false;
         if(incidentList.incidents.length > 0) {
           for (var incident in incidentList.incidents) {
-            final Marker marker = Marker(
-                markerId: MarkerId(incident.user),
-                draggable: false,
-//                onTap:() {
-//                  print("hello world");
-//                },
-                position: LatLng(incident.latitude, incident.longitude),
-                icon: BitmapDescriptor.fromAsset('images/assets/roar-map-marker.png',),
-                infoWindow: InfoWindow(
-                  title: "Species: " + incident.species,
-                  snippet: "Severity: " + incident.severity,
-                )
-            );
+            Marker marker;
+            if(incident.severity == "P0") {
+              marker = Marker(
+                  markerId: MarkerId(incident.user),
+                  draggable: false,
+                  onTap:() {},
+                  position: LatLng(incident.latitude, incident.longitude),
+                  icon: BitmapDescriptor.fromAsset('images/assets/roar-map-marker-p1.png',),
+                  infoWindow: InfoWindow(
+                    title: "Species: " + incident.species,
+                    snippet: "Severity: " + incident.severity,
+                  )
+              );
+            } else {
+              marker = Marker(
+                  markerId: MarkerId(incident.user),
+                  draggable: false,
+                  onTap:() {},
+                  position: LatLng(incident.latitude, incident.longitude),
+                  icon: BitmapDescriptor.fromAsset('images/assets/roar-map-marker.png',),
+                  infoWindow: InfoWindow(
+                    title: "Species: " + incident.species,
+                    snippet: "Severity: " + incident.severity,
+                  )
+              );
+            }
             allMarkers.add(marker);
           }
         }

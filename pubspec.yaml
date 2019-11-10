@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   google_maps_flutter: ^0.5.11
   uuid: 2.0.1
+  charts_flutter: ^0.8.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -69,6 +70,7 @@ flutter:
     - images/assets/roar-circle-bg.png
     - images/assets/roar-circle-sm.png
     - images/headings/join-roar.png
+    - images/assets/roar-map-marker-p1.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
