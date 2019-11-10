@@ -19,18 +19,32 @@ class BackGround extends StatelessWidget {
 class ReportHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: ConstrainedBox(
-            constraints: BoxConstraints.expand(),
-            child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ReportRoute()),
-                  );
-                },
-                padding: EdgeInsets.all(0.0),
-                child: Image.asset('images/buttons/roar-btn-report.png'))));
+    return Column(
+      children: <Widget>[
+        new Text(
+            'TAP TO REPORT',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                fontFamily: 'IBMPlexSans',
+                color: Colors.white,
+                fontSize: 40.0
+            )
+        ),
+        new Container(
+          height: 250.0,
+          width: 250.0,
+          child: FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ReportRoute()),
+              );
+            },
+            child: Image.asset('images/buttons/roar-btn-report.png'),
+          ),
+        )
+      ],
+    );
   }
 }
 
@@ -38,13 +52,14 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80.0,
+      width: 250.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
-          image: new AssetImage('images/roar-logo-rev.png'),
+          image: new AssetImage('images/roar-logo-white.png'),
         ),
         shape: BoxShape.rectangle,
       ),
-      alignment: FractionalOffset(1.0, 0.0),
     );
   }
 }
@@ -56,8 +71,20 @@ class WelcomePage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           BackGround(),
-          ReportHome(),
-          Title()
+          Padding(
+            padding: EdgeInsets.only(top: 250.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: ReportHome(),
+            ),
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 70.0),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Title()
+              )
+            )
         ],
       ),
       bottomNavigationBar: BottomAppBar(

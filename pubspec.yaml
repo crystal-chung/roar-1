@@ -44,7 +44,7 @@ flutter:
     - images/roar-icon.png
     - images/roar-logo.png
     - images/roar-bg.png
-    - images/roar-logo-rev.png
+    - images/roar-logo-white.png
     - images/buttons/roar-btn-report.png
     - resources/sample_incidents.json
 
