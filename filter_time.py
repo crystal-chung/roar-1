@@ -28,24 +28,24 @@ def filter_time(timeinterval, df):
     if timeinterval == 'hour':
         curr_hour = currenttime.hour
         less = currenttime.replace(hour = curr_hour-1)
-        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)]
+        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1)
     elif timeinterval == 'day':
         curr_day = currenttime.day
         less = currenttime.replace(day = curr_day-1)
-        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)]
+        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1)
     elif timeinterval == 'week':
         less = list(currenttime.isocalendar())
         less[1] = less[1]-1
         less = pd.Timestamp(iso_to_gregorian(*tuple(less)) )
-        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)]
+        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1)
     elif timeinterval == 'month':
         curr_month = currenttime.month
         less = currenttime.replace(month = curr_month-1)
-        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)]
+        fil =  df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1)
     elif timeinterval == 'year':
         curr_year = currenttime.year
         less = currenttime.replace(year = curr_year-1)
-        fil = df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)]
+        fil = df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1)
     else:
         print("not a valid time interval")
     if fil.empty:
