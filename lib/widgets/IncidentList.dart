@@ -3,15 +3,16 @@ import 'package:flutter/foundation.dart';
 
 
 class ListItem extends StatelessWidget {
-  final List<String> items;
-  ListItem(this.items);
+  var items = [{"date": "1", "type": "bad"}, {"date": "3", "type": "good"}];
 
   Widget _buildProductItem(BuildContext context, int index) {
+    print("INDEX");
+    print(index);
     return Card(
-      child: Column(
+      child: Row(
         children: <Widget>[
-          Text("hi"),
-          Text(items[index])
+          Text(items[index]["date"]),
+          Text(items[index]["type"])
         ],
       ),
     );
@@ -19,6 +20,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("ITEM LENGTH");
     print(this.items.length);
     return ListView.builder(
       scrollDirection: Axis.vertical,

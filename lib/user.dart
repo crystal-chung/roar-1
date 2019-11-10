@@ -8,11 +8,40 @@ import 'package:flutter/services.dart' show rootBundle;
 
 class UserRoute extends StatelessWidget {
 
+
+//  Future<String> getFileData(String path) async{
+//    var file = new File('../resources/sample_incidents.json');
+//    print(file);
+//    var contents;
+//
+////    if (await file.exists())
+////    {
+////    // Read file
+//    contents = await file.readAsString();
+//    print("in getFileData");
+//    print(contents);
+////    }
+////    else {
+////      print("FILE DID NOT EXIST");
+////    }
+//  }
+//
+//  String getStuff() {
+//    getFileData('resources/sample_incidents.json').then((s){
+//      return s;
+//    }
+//    );
+//  }
+
+
   @override
-  Widget build(BuildContext context){
-    print("FUCKTHIS");
-    String contents = new File('resources/sample_incidents.json').readAsStringSync();
-    print(contents);
+  Widget build(BuildContext context) {
+
+//    String content_TEST = new File('resources/sample_incidents.json').readAsStringSync();
+//    print(content_TEST);
+//    print("FUCKTHIS");
+//    String contents = getStuff();
+//    print(contents);
     return Scaffold(
       appBar: AppBar(
         title: Text("User, bitches."),
@@ -25,7 +54,7 @@ class UserRoute extends StatelessWidget {
               },
               child: Text('Report Incident')
             ),
-            ListItem(["Name", "Name"]),
+            ListItem(),
             RaisedButton(
                 onPressed: (){
                 },
