@@ -56,7 +56,7 @@ class Title extends StatelessWidget {
       width: 250.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
-          image: new AssetImage('images/roar-logo-rev.png'),
+          image: new AssetImage('images/roar-logo-white.png'),
         ),
         shape: BoxShape.rectangle,
       ),
@@ -79,7 +79,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 20.0),
+              padding: EdgeInsets.only(top: 70.0),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Title()
