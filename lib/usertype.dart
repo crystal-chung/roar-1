@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:roar/background.dart';
 import 'package:roar/login_ranger.dart';
 import 'login.dart';
-import 'package:roar/user.dart';
 import 'title.dart';
 import 'welcome.dart';
 import 'footer.dart';
@@ -28,7 +27,7 @@ class UserTypes extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => LoginRoute()),
                       );
                     },
-                    child: Image.asset('images/buttons/roar-btn-report.png'),
+                    child: Image.asset('images/buttons/roar-btn-profile.png'),
                   ),
                 ),
                 new Text(
@@ -53,7 +52,7 @@ class UserTypes extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => LoginRangerRounte()),
                       );
                     },
-                    child: Image.asset('images/buttons/roar-btn-report.png'),
+                    child: Image.asset('images/buttons/roar-btn-user.png'),
                   ),
                 ),
                 new Text(
