@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'title.dart';
 import 'background.dart';
-
+import 'welcome.dart';
 
 class MoreInfoRoute extends StatelessWidget {
   @override
@@ -17,7 +17,29 @@ class MoreInfoRoute extends StatelessWidget {
                   child: RoarTitle()
               )
           ),
-          UserLogin()
+          UserLogin(),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WelcomePage()),
+                        );
+                      },
+                      child: new Text(
+                          '< Back',
+                          textAlign: TextAlign.left,
+                          style: new TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0
+                          )
+                      )
+                  )
+              )
+          ),
         ]
       )
     );

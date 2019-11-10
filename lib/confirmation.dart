@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'title.dart';
 import 'background.dart';
 import 'footer.dart';
+import 'welcome.dart';
 import 'package:uuid/uuid.dart';
 import 'dart:math';
 
@@ -56,6 +57,28 @@ class ConfirmationRoute extends StatelessWidget {
         body: Stack(
           children: <Widget>[
             BackGround(),
+            Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => WelcomePage()),
+                          );
+                        },
+                        child: new Text(
+                            'Home',
+                            textAlign: TextAlign.left,
+                            style: new TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0
+                            )
+                        )
+                    )
+                )
+            ),
             Padding(
                 padding: EdgeInsets.only(top: 70.0),
                 child: Align(

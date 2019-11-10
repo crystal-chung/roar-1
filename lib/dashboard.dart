@@ -36,12 +36,22 @@ class DashboardReport extends StatelessWidget {
     return Column(
       children: <Widget>[
         new Container(
-          width: 200.0,
-          height: 200.0,
+          height: 225.0,
+          width: 225.0,
           decoration: new BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: new AssetImage('images/assets/roar-circle-bg.png'),
+            ),
+            shape: BoxShape.rectangle,
           ),
+        ),
+//        new Container(
+//          width: 200.0,
+//          height: 200.0,
+//          decoration: new BoxDecoration(
+//            color: Colors.white,
+//            shape: BoxShape.circle,
+//          ),
 //          border: Border.all(
 //            color: Colors.yellow,
 //            width: 8.0,
@@ -52,7 +62,7 @@ class DashboardReport extends StatelessWidget {
 //                fontSize: 20.0,
 //              )
 //          )
-        ),
+//        ),
         SizedBox(
           height: 25.0,
         ),
@@ -89,14 +99,22 @@ class MapViewFooter extends StatelessWidget {
             shape: BoxShape.rectangle,
           ),
         ),
-        new Text(
-          'MAP VIEW',
-          textAlign: TextAlign.center,
-          style: new TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 30.0
+        new FlatButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AuthorityRoute()),
+            );
+          },
+          child: new Text(
+              'MAP VIEW',
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 30.0
+              )
         )
        )
       ],
@@ -147,6 +165,7 @@ class DashboardRoute extends StatelessWidget {
                 child: RangerRoarTitle()
               )
             ),
+
           Padding(
               padding: EdgeInsets.only(top: 150.0),
               child: Align(

@@ -6,6 +6,7 @@ import 'login.dart';
 import 'package:roar/user.dart';
 import 'title.dart';
 import 'welcome.dart';
+import 'footer.dart';
 
 class UserTypes extends StatelessWidget {
   @override
@@ -113,6 +114,13 @@ class UserTypeRoute extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   child: UserTypes()
               )
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: WelcomeFooter(),
+            ),
           )
         ],
       )

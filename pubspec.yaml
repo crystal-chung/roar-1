@@ -27,8 +27,12 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
-#  flutter_test:
-#    sdk: flutter
+  flutter_launcher_icons: "^0.7.3"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/roar-icon.png"
 
 
 # For information on the generic Dart part of this file, see the
@@ -60,6 +64,9 @@ flutter:
     - images/buttons/roar-btn-cash.png
     - images/ranger_meme.jpg
     - images/user_meme.jpg
+    - images/assets/roar-circle-bg.png
+    - images/assets/roar-circle-sm.png
+    - images/headings/join-roar.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

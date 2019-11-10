@@ -32,6 +32,22 @@ class YourRoar extends StatelessWidget {
   }
 }
 
+class JoinRoarTitle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100.0,
+      width: 300.0,
+      decoration: new BoxDecoration(
+        image: DecorationImage(
+          image: new AssetImage('images/headings/join-roar.png'),
+        ),
+        shape: BoxShape.rectangle,
+      ),
+    );
+  }
+}
+
 class RangerRoarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
