@@ -123,10 +123,9 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ),
               TextFormField(
-                keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
                 maxLines: 1,
-                obscureText: false,
+                obscureText: true,
                 maxLength: 120,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
