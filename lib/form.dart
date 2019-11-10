@@ -11,20 +11,12 @@ class ReportForm extends StatefulWidget {
 class _ReportFormState extends State<ReportForm> {
   final _formKey = GlobalKey<FormState>();
   String activityValue = 'Poaching';
-  String severityValue = 'Low: Inform';
 
   var activities = [
     'Poaching',
     'Dead Animal',
     'Trafficking',
     'Other'
-  ];
-
-  var severity = [
-    'Critical: Animal or Human Life in Danger',
-    'High: Active illegal activity',
-    'Medium: Sighting or movement',
-    'Low: Inform'
   ];
 
   @override
@@ -34,13 +26,19 @@ class _ReportFormState extends State<ReportForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+            Text(
+            'What Happened?',
+            style: TextStyle(fontFamily: 'IBMPlexSans'),
+          ),
           TextFormField(
             obscureText: false,
             maxLength: 120,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Description of Activity',
             ),
+          ),
+          Text(
+              'What animals were involved?'
           ),
           TextFormField(
             obscureText: false,
@@ -55,6 +53,9 @@ class _ReportFormState extends State<ReportForm> {
               }
               return null;
             },
+          ),
+          Text(
+              'What type of activity happened?'
           ),
           DropdownButton<String>(
             value: activityValue,
@@ -72,30 +73,6 @@ class _ReportFormState extends State<ReportForm> {
               });
             },
             items: activities
-                .map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            })
-                .toList(),
-          ),
-          DropdownButton<String>(
-            value: severityValue,
-            elevation: 16,
-            style: TextStyle(
-                color: Colors.deepPurple
-            ),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              setState(() {
-                severityValue = newValue;
-              });
-            },
-            items: severity
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,

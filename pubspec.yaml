@@ -77,3 +77,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: fonts/IBMPlexSans-Medium.ttf
+        - asset: fonts/IBMPlexSans-Bold.ttf
