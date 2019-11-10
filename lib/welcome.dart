@@ -19,18 +19,31 @@ class BackGround extends StatelessWidget {
 class ReportHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 250.0,
-      width: 250.0,
-      child: FlatButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ReportRoute()),
-            );
-          },
-          child: Image.asset('images/buttons/roar-btn-report.png')
-      )
+    return Column(
+      children: <Widget>[
+        new Container(
+          height: 250.0,
+          width: 250.0,
+          child: FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ReportRoute()),
+              );
+            },
+            child: Image.asset('images/buttons/roar-btn-report.png'),
+          ),
+        ),
+        new Text(
+          'SEND A REPORT',
+          textAlign: TextAlign.center,
+          style: new TextStyle(
+            fontFamily: 'IBMPlexSans',
+            color: Colors.white,
+            fontSize: 40.0
+          )
+        )
+      ],
     );
   }
 }
@@ -58,9 +71,12 @@ class WelcomePage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           BackGround(),
-          Align(
-            alignment: Alignment.center,
-            child: ReportHome(),
+          Padding(
+            padding: EdgeInsets.only(top: 150.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: ReportHome(),
+            ),
           ),
           Padding(
               padding: EdgeInsets.only(top: 20.0),
