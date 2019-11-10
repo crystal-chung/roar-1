@@ -27,7 +27,7 @@ class DashboardReport extends StatelessWidget {
             textAlign: TextAlign.center,
             style: new TextStyle(
                 color: Colors.black,
-                fontSize: 25.0
+                fontSize: 20.0
             )
         ),
       )
@@ -36,8 +36,8 @@ class DashboardReport extends StatelessWidget {
     return Column(
       children: <Widget>[
         new Container(
-          height: 225.0,
-          width: 225.0,
+          width: 180.0,
+          height: 180.0,
           decoration: new BoxDecoration(
             image: DecorationImage(
               image: new AssetImage('images/assets/roar-circle-bg.png'),
@@ -45,28 +45,10 @@ class DashboardReport extends StatelessWidget {
             shape: BoxShape.rectangle,
           ),
         ),
-//        new Container(
-//          width: 200.0,
-//          height: 200.0,
-//          decoration: new BoxDecoration(
-//            color: Colors.white,
-//            shape: BoxShape.circle,
-//          ),
-//          border: Border.all(
-//            color: Colors.yellow,
-//            width: 8.0,
-//          ),
-//          child: new Text('Title',
-//              style: new TextStyle(
-//                fontWeight: FontWeight.bold,
-//                fontSize: 20.0,
-//              )
-//          )
-//        ),
         SizedBox(
           height: 25.0,
         ),
-        Text("TIPS & REPORTS",
+        Text("TOTAL TIPS & REPORTS",
             textAlign: TextAlign.center,
             style: new TextStyle(
                 color: Colors.yellow,
@@ -90,8 +72,8 @@ class MapViewFooter extends StatelessWidget {
     return Column(
       children: <Widget>[
         new Container(
-          height: 225.0,
-          width: 225.0,
+          height: 200.0,
+          width: 200.0,
           decoration: new BoxDecoration(
             image: DecorationImage(
               image: new AssetImage('images/assets/roar-map-view.png'),
@@ -175,20 +157,33 @@ class DashboardRoute extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
-                        fontSize: 25.0
+                        fontSize: 17.0
                     )
                 )
               )
           ),
           Padding(
-            padding: EdgeInsets.only(top: 575.0),
+            padding: EdgeInsets.only(top: 540.0),
             child: Align(
               alignment: Alignment.topCenter,
               child: MapViewFooter()
             ),
-          )
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 240.0),
+              child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Column(
+                      children:<Widget>[
+                        Text(
+                          855.toString(),
+                          style: TextStyle(fontSize: 80),
+                        )
+                      ]
+                  )
+              )
+          ),
         ],
       )
     );
