@@ -46,6 +46,7 @@ flutter:
     - images/roar-bg.png
     - images/roar-logo-white.png
     - images/buttons/roar-btn-report.png
+    - resources/sample_incidents.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:
