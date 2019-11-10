@@ -4,22 +4,7 @@ import 'background.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'moreinfo.dart';
-
-class Title extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 80.0,
-      width: 250.0,
-      decoration: new BoxDecoration(
-        image: DecorationImage(
-          image: new AssetImage('images/roar-logo-white.png'),
-        ),
-        shape: BoxShape.rectangle,
-      ),
-    );
-  }
-}
+import 'title.dart';
 
 class ReportHome extends StatelessWidget {
   @override
@@ -127,7 +112,7 @@ class WelcomePage extends StatelessWidget {
               padding: EdgeInsets.only(top: 70.0),
               child: Align(
                 alignment: Alignment.topCenter,
-                child: Title()
+                child: RoarTitle()
               )
             ),
           Padding(
