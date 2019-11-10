@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'confirmation.dart';
 
 class ReportForm extends StatefulWidget {
   ReportForm({Key key}) : super(key: key);
@@ -206,11 +206,12 @@ class _ReportFormState extends State<ReportForm> {
           padding: const EdgeInsets.symmetric(vertical: 14.0),
           child: RaisedButton(
             onPressed: () {
-              // Validate will return true if the form is valid, or false if
-              // the form is invalid.
-              if (_formKey.currentState.validate()) {
-                // Process data.
-              }
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ConfirmationRoute()
+                )
+              );
             },
             child: Text('Submit'),
           ),
