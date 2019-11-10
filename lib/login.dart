@@ -67,7 +67,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 300,
       child: Form(
           key: _formKey,
           child: Column(
