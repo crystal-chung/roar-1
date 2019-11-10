@@ -10,7 +10,6 @@ class AuthorityRoute extends StatefulWidget {
   _MapState createState() => _MapState();
 }
 
-
 class _MapState extends State<AuthorityRoute> {
   GoogleMapController mapController;
   List<Marker> allMarkers = [];
@@ -48,7 +47,6 @@ class _MapState extends State<AuthorityRoute> {
                   snippet: "Severity: " + incident.severity,
                 )
             );
-            print(marker);
             allMarkers.add(marker);
           }
         }

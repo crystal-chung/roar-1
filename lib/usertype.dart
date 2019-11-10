@@ -5,6 +5,7 @@ import 'package:roar/login_ranger.dart';
 import 'login.dart';
 import 'package:roar/user.dart';
 import 'title.dart';
+import 'welcome.dart';
 
 class UserTypes extends StatelessWidget {
   @override
@@ -82,6 +83,28 @@ class UserTypeRoute extends StatelessWidget {
               child: Align(
                   alignment: Alignment.topCenter,
                   child: RoarTitle()
+              )
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WelcomePage()),
+                        );
+                      },
+                      child: new Text(
+                          'Home',
+                          textAlign: TextAlign.left,
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0
+                          )
+                      )
+                  )
               )
           ),
           Padding(

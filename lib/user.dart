@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'widgets/IncidentList.dart';
 import 'background.dart';
 import 'title.dart';
+import 'login.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -55,8 +56,30 @@ class UserRoute extends StatelessWidget {
                   child: YourRoar()
               )
             ),
+            Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginRoute()),
+                          );
+                        },
+                        child: new Text(
+                            'Log out',
+                            textAlign: TextAlign.left,
+                            style: new TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0
+                            )
+                        )
+                    )
+                )
+            ),
         Padding(
-            padding: EdgeInsets.only(top: 120),
+            padding: EdgeInsets.only(top: 165),
             child: Align(
               alignment: Alignment.center,
               child: Container(
@@ -65,10 +88,34 @@ class UserRoute extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text("Username",
-                          style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30)
+                          style: TextStyle(color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FontStyle.italic,
+                              fontSize: 17)
                       ),
                       Text("HACKS4SNACKS",
-                          style: TextStyle(color: Colors.yellow, fontSize: 30)
+                          style: TextStyle(color: Colors.yellow,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FontStyle.italic,
+                              fontSize: 35)
+                      ),
+                      Wrap (
+                          runSpacing: -60,
+                          children: <Widget>[
+                            Padding(
+                                padding: EdgeInsets.only(top: 13.0),
+                                child: Text("Report History",
+                                    style: TextStyle(color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FontStyle.italic,
+                                        fontSize: 17)
+                                )
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 15.0),
+                              child: ListItem(),
+                            )
+                          ]
                       )
                     ]
                   )
@@ -76,31 +123,106 @@ class UserRoute extends StatelessWidget {
             )
         ),
             Padding(
-                padding: EdgeInsets.only(),
-                child: Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                        width: 400,
-                        child:  Wrap (
-                            runSpacing: -60,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Report History",
-                                    style: TextStyle(color: Colors.yellow, fontWeight: FontWeight.bold, fontSize: 20)
-                                )
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: ListItem(),
-                              )
-                            ]
-                        )
-                    )
-                )
+              padding: EdgeInsets.only(top: 575.0),
+              child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Triple()
+              ),
             )
           ],
         )
     );
+  }
+}
+
+class Triple extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Tip(),
+        Balance(),
+        Community()
+      ],
+    );
+  }
+}
+
+class Tip extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          height: 100.0,
+          width: 100.0,
+          decoration: new BoxDecoration(
+            image: DecorationImage(
+              image: new AssetImage('images/buttons/roar-btn-report.png'),
+            ),
+            shape: BoxShape.rectangle,
+          ),
+        ),
+        Text(
+            'Send a Tip',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                color: Colors.white,
+                fontSize: 20.0
+            ))
+        ]);
+  }
+}
+
+class Balance extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        children: <Widget>[
+          Container(
+            height: 100.0,
+            width: 100.0,
+            decoration: new BoxDecoration(
+              image: DecorationImage(
+                image: new AssetImage('images/buttons/roar-btn-cash.png'),
+              ),
+              shape: BoxShape.rectangle,
+            ),
+          ),
+          Text(
+              'Balance',
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0
+              ))
+        ]);
+  }
+}
+
+class Community extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        children: <Widget>[
+          Container(
+            height: 100.0,
+            width: 100.0,
+            decoration: new BoxDecoration(
+              image: DecorationImage(
+                image: new AssetImage('images/buttons/roar-btn-community.png'),
+              ),
+              shape: BoxShape.rectangle,
+            ),
+          ),
+          Text(
+              'Community',
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0
+              ))
+        ]);
   }
 }

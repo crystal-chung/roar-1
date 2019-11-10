@@ -3,6 +3,7 @@ import 'package:roar/user.dart';
 import 'background.dart';
 import 'title.dart';
 import 'signup.dart';
+import 'welcome.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -66,6 +67,29 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    final loginButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.yellow,
+        child: MaterialButton(
+          minWidth: 325.0,
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => UserRoute()),
+            );
+          },
+          child: Text("Login",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black,
+                  fontSize: 25.0
+              )
+          ),
+        )
+    );
+
     return Container(
       width: 300,
       child: Form(
@@ -115,7 +139,11 @@ class _LoginFormState extends State<LoginForm> {
                     MaterialPageRoute(builder: (context) => UserRoute()),
                   );
                 },
-              )
+              ),
+              SizedBox(
+                height: 35.0,
+              ),
+              loginButton
             ],
           )
       )
@@ -135,6 +163,28 @@ class LoginRoute extends StatelessWidget {
               child: Align(
                   alignment: Alignment.topCenter,
                   child: RoarTitle()
+              )
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WelcomePage()),
+                        );
+                      },
+                      child: new Text(
+                          'Home',
+                          textAlign: TextAlign.left,
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0
+                          )
+                      )
+                  )
               )
           ),
           Padding(

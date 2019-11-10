@@ -53,6 +53,12 @@ flutter:
     - images/headings/your-roars.png
     - resources/sample_incidents.json
     - images/assets/roar-dollar-lg.png
+    - images/headings/ranger-roar.png
+    - images/assets/roar-map-view.png
+    - images/buttons/roar-btn-report.png
+    - images/buttons/roar-btn-community.png
+    - images/buttons/roar-btn-cash.png
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
