@@ -24,24 +24,27 @@ class ReportRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-              children: <Widget> [
-                BackGround(),
-                Padding(
-                  padding: EdgeInsets.only(top: 70.0),
-                  child: Align(
-                      alignment: Alignment.topCenter,
-                      child: Title()
-                  )
-                ),
-                Padding(
-                    padding: EdgeInsets.only(top: 50.0),
+          children: <Widget>[
+            BackGround(),
+            Padding(
+                padding: EdgeInsets.only(top: 70.0),
+                child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Title()
+                )
+            ),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: new Container(
+                    width: 400,
+                    height: 650,
                     child: Align(
-                        alignment: Alignment.topCenter,
                         child: ReportForm()
                     )
                 )
-              ]
-        )
-    );
+            ),
+          ],
+        ),
+      );
   }
 }
