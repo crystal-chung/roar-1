@@ -11,6 +11,7 @@ import 'report.dart';
 import 'authority.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
+import 'cashout.dart';
 
 class UserRoute extends StatelessWidget {
 
@@ -174,7 +175,7 @@ class Balance extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context)=> MoreInfoRoute()),
+                      MaterialPageRoute(builder: (context)=> CashoutRoute()),
                     );
                   }
               ),
