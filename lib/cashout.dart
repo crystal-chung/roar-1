@@ -149,7 +149,7 @@ class CashoutRoute extends StatelessWidget {
               )
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20.0),
+            padding: EdgeInsets.only(left: 40.0),
             child: Wrap (
               runSpacing: -100,
               children: <Widget>[
@@ -164,7 +164,7 @@ class CashoutRoute extends StatelessWidget {
             )
           ),
           Padding(
-              padding: EdgeInsets.only(top: 650.0),
+              padding: EdgeInsets.only(top: 700.0),
               child: Align(
                   alignment: Alignment.topCenter,
                   child: Column(
