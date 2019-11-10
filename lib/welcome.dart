@@ -20,17 +20,18 @@ class ReportHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: ConstrainedBox(
-            constraints: BoxConstraints.expand(),
-            child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ReportRoute()),
-                  );
-                },
-                padding: EdgeInsets.all(0.0),
-                child: Image.asset('images/buttons/roar-btn-report.png'))));
+      height: 250.0,
+      width: 250.0,
+      child: FlatButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ReportRoute()),
+            );
+          },
+          child: Image.asset('images/buttons/roar-btn-report.png')
+      )
+    );
   }
 }
 
@@ -38,15 +39,14 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 20.0,
-      width: 100.0,
+      height: 80.0,
+      width: 250.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
           image: new AssetImage('images/roar-logo-rev.png'),
         ),
         shape: BoxShape.rectangle,
       ),
-      alignment: Alignment.topCenter,
     );
   }
 }
@@ -58,10 +58,17 @@ class WelcomePage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           BackGround(),
-          ReportHome(),
-          Center(
-              child: Title()
-          )
+          Align(
+            alignment: Alignment.center,
+            child: ReportHome(),
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Title()
+              )
+            )
         ],
       ),
       bottomNavigationBar: BottomAppBar(
