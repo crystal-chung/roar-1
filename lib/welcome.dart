@@ -56,7 +56,7 @@ class Title extends StatelessWidget {
       width: 250.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
-          image: new AssetImage('images/roar-logo-rev.png'),
+          image: new AssetImage('images/roar-logo-white.png'),
         ),
         shape: BoxShape.rectangle,
       ),
