@@ -62,6 +62,8 @@ flutter:
     - images/buttons/roar-btn-report.png
     - images/buttons/roar-btn-community.png
     - images/buttons/roar-btn-cash.png
+    - images/buttons/roar-btn-profile.png
+    - images/buttons/roar-btn-user.png
     - images/ranger_meme.jpg
     - images/user_meme.jpg
     - images/assets/roar-circle-bg.png
