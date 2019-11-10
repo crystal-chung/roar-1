@@ -30,6 +30,93 @@ class _ReportFormState extends State<ReportForm> {
 
   @override
   Widget build(BuildContext context) {
+    final UploadButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.yellow,
+        child: MaterialButton(
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {},
+          child: Text("Upload",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black
+              )
+          ),
+        )
+    );
+
+    final SelectLocationButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.yellow,
+        child: MaterialButton(
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {},
+          child: Text("Select Location",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black
+              )
+          ),
+        )
+    );
+
+    final SubmitButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.yellow,
+        child: MaterialButton(
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ConfirmationRoute()
+                )
+            );
+            },
+          child: Text("Submit",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black
+              )
+          ),
+        )
+    );
+
+    final NoButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.white,
+        child: MaterialButton(
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {},
+          child: Text("No",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black
+              )
+          ),
+        )
+    );
+
+    final UseMyLocation = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.white,
+        child: MaterialButton(
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          onPressed: () {},
+          child: Text("Use My Location",
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.black
+              )
+          ),
+        )
+    );
+
     return Form(
       key: _formKey,
       child: Column(
@@ -135,30 +222,11 @@ class _ReportFormState extends State<ReportForm> {
                   children: <Widget>[
                   Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: RaisedButton(
-                        color: Colors.yellow,
-                        onPressed: () {
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          if (_formKey.currentState.validate()) {
-                            // Process data.
-                          }
-                        },
-                        child: Text('Upload'),
-                      ),
+                      child: UploadButton
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: RaisedButton(
-                        onPressed: () {
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          if (_formKey.currentState.validate()) {
-                            // Process data.
-                          }
-                        },
-                        child: Text('No'),
-                      ),
+                      child: NoButton
                     ),
                   ],
                 )
@@ -180,30 +248,11 @@ class _ReportFormState extends State<ReportForm> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: RaisedButton(
-                        color: Colors.yellow,
-                        onPressed: () {
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          if (_formKey.currentState.validate()) {
-                            // Process data.
-                          }
-                        },
-                        child: Text('Select Location'),
-                      ),
+                      child: SelectLocationButton
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: RaisedButton(
-                        onPressed: () {
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          if (_formKey.currentState.validate()) {
-                            // Process data.
-                          }
-                        },
-                        child: Text('Use My Location'),
-                      ),
+                      child: UseMyLocation
                     ),
                   ],
                 )
@@ -213,17 +262,7 @@ class _ReportFormState extends State<ReportForm> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 14.0),
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ConfirmationRoute()
-                )
-              );
-            },
-            child: Text('Submit'),
-          ),
+          child: SubmitButton
         ),
         ],
       ),
