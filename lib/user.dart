@@ -6,45 +6,19 @@ import 'login.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'moreinfo.dart';
+import 'report.dart';
+import 'authority.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 
 class UserRoute extends StatelessWidget {
 
 
-//  Future<String> getFileData(String path) async{
-//    var file = new File('../resources/sample_incidents.json');
-//    print(file);
-//    var contents;
-//
-////    if (await file.exists())
-////    {
-////    // Read file
-//    contents = await file.readAsString();
-//    print("in getFileData");
-//    print(contents);
-////    }
-////    else {
-////      print("FILE DID NOT EXIST");
-////    }
-//  }
-//
-//  String getStuff() {
-//    getFileData('resources/sample_incidents.json').then((s){
-//      return s;
-//    }
-//    );
-//  }
-
 
   @override
   Widget build(BuildContext context) {
 
-//    String content_TEST = new File('resources/sample_incidents.json').readAsStringSync();
-//    print(content_TEST);
-//    print("FUCKTHIS");
-//    String contents = getStuff();
-//    print(contents);
     return Scaffold(
         body: Stack(
           children: <Widget>[
@@ -156,25 +130,35 @@ class Tip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        Container(
-          height: 100.0,
-          width: 100.0,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-              image: new AssetImage('images/buttons/roar-btn-report.png'),
-            ),
-            shape: BoxShape.rectangle,
+        children: <Widget>[
+          Container(
+              height: 100.0,
+              width: 100.0,
+              child: FlatButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> UserReportRoute()),
+                    );
+                  }
+              ),
+              decoration: new BoxDecoration(
+                image: DecorationImage(
+                  image: new AssetImage('images/buttons/roar-btn-report.png'),
+                ),
+                shape: BoxShape.rectangle,
+              )
           ),
-        ),
-        Text(
-            'Send a Tip',
-            textAlign: TextAlign.center,
-            style: new TextStyle(
-                color: Colors.white,
-                fontSize: 20.0
-            ))
-        ]);
+          Text(
+              'Send a Tip',
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0
+              )
+          )
+        ]
+    );
   }
 }
 
@@ -184,14 +168,22 @@ class Balance extends StatelessWidget {
     return Column(
         children: <Widget>[
           Container(
-            height: 100.0,
-            width: 100.0,
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('images/buttons/roar-btn-cash.png'),
+              height: 100.0,
+              width: 100.0,
+              child: FlatButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> MoreInfoRoute()),
+                    );
+                  }
               ),
-              shape: BoxShape.rectangle,
-            ),
+              decoration: new BoxDecoration(
+                image: DecorationImage(
+                  image: new AssetImage('images/buttons/roar-btn-cash.png'),
+                ),
+                shape: BoxShape.rectangle,
+              )
           ),
           Text(
               'Balance',
@@ -204,6 +196,7 @@ class Balance extends StatelessWidget {
   }
 }
 
+
 class Community extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -212,12 +205,20 @@ class Community extends StatelessWidget {
           Container(
             height: 100.0,
             width: 100.0,
+            child: FlatButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> AuthorityRoute()),
+                );
+              }
+            ),
             decoration: new BoxDecoration(
               image: DecorationImage(
                 image: new AssetImage('images/buttons/roar-btn-community.png'),
               ),
               shape: BoxShape.rectangle,
-            ),
+            )
           ),
           Text(
               'Community',
