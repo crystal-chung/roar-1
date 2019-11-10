@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
 import 'signup.dart';
 import 'moreinfo.dart';
+import 'usertype.dart';
 
 class Footer extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginRoute()),
+                  MaterialPageRoute(builder: (context) => UserTypeRoute()),
                 );
               },
               child: new Text(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'report.dart';
 import 'background.dart';
-import 'title.dart';
 import 'footer.dart';
+import 'title.dart';
+import 'report.dart';
 
 class ReportHome extends StatelessWidget {
   @override
