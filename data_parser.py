@@ -12,19 +12,55 @@ timestamp (str): timestamp of the report
 import pandas as pd
 
 
-def select_by_status(dat, status, user_id=None):
+def filter_by_status(dat, status, user_id=None):
     """
     Return number of tips by status and (optionally) by user.
     Inputs:
+        dat (pd.DataFrame): dataframe with incidents
         status (str): one of the three status
         user_id (str, optional): user id. if None, incidents from all users are included.
     Returns:
-        int: count of incidents by status and (optionally) user
+        list: list of incident identifiers that are selected
     """
     dat_status = dat[dat['status'] == status]
     if not user_id:
-        return len(dat_status['incident'].tolist())
+        list_of_incidents = dat_status['incident'].tolist()
     else:
-        return len(dat_status['incident']['user'==user_id].tolist())
+        list_of_incidents = dat_status['incident']['user'==user_id].tolist()
+    return list_of_incidents
 
 
+def filter_by_severity(dat, severity, user_id=None):
+    """
+    Return number of tips by severity and (optionally) by user.
+    Inputs:
+        dat (pd.DataFrame): dataframe with incidents
+        severity (str): severity of incident
+        user_id (str, optional): user id. if None, incidents from all users are included.
+    Returns:
+        list: list of incident identifiers that are selected
+    """
+    dat_status = dat[dat['severity'] == severity]
+    if not user_id:
+        list_of_incidents = dat_status['incident'].tolist()
+    else:
+        list_of_incidents = dat_status['incident']['user'==user_id].tolist()
+    return list_of_incidents
+
+
+def filter_by_species(dat, species, user_id=None):
+    """
+    Return number of tips by species and (optionally) by user.
+    Inputs:
+        dat (pd.DataFrame): dataframe with incidents
+        species (str): name of the species
+        user_id (str, optional): user id. if None, incidents from all users are included.
+    Returns:
+        list: list of incident identifiers that are selected
+    """
+    dat_status = dat[dat['species'] == species]
+    if not user_id:
+        list_of_incidents = dat_status['incident'].tolist()
+    else:
+        list_of_incidents = dat_status['incident']['user'==user_id].tolist()
+    return list_of_incidents
