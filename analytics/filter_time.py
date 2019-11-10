@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -63,3 +64,21 @@ def number_submitted(timeinterval, df):
         num_submitted = fil_df.shape[0]
     return num_submitted
 
+def filter_two_months(df):
+    """A hacky function that returns the count for the past two months"""
+    currenttime = datetime.now()
+    curr_month = currenttime.month
+    df['dt_obj'] = pd.to_datetime(df['timestamp'], format='%b %d %Y %H:%M:%S')
+    less = currenttime.replace(month=curr_month - 1)
+    count_this_month = df[(df['dt_obj'] >= less) & (df['dt_obj'] <= currenttime)].drop(['dt_obj'], axis=1).shape[0]
+
+    one_more = currenttime.replace(month=curr_month - 2)
+    count_last_month = df[(df['dt_obj'] >= one_more) & (df['dt_obj'] <= less)].drop(['dt_obj'], axis=1).shape[0]
+    return {'this_month': str(count_this_month), 'last_month': str(count_last_month)}
+
+
+if __name__ == '__main__':
+    dat = pd.read_csv('mock_data.csv')
+    month_count = filter_two_months(dat)
+    with open('month_count.json', 'w') as file:
+        file.write(json.dumps(month_count))

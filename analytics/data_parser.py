@@ -9,7 +9,10 @@ action (str): action being reported
 status (str): status of the report
 timestamp (str): timestamp of the report
 """
+import json
+
 import fiona
+import pandas as pd
 from shapely.geometry import Point, shape
 
 FOLDER_WITH_US_MAP = ''
@@ -118,3 +121,21 @@ def top_users_by_state(dat, state_name=None):
         if count_by_user[user] == max_count:
             max_users.append(user)
     return max_users
+
+
+if __name__ == '__main__':
+    dat = pd.read_csv('mock_data.csv')
+    # filter by species
+    spec_dict = {}
+    for species in ["tiger", "elephant", "gorilla", "pangolin", "rhino", "parrot", "sea turtle", "other"]:
+        spec_dict[species] = str(len(filter_by_species(dat, species)))
+    with open('species.json', 'w') as file:
+        file.write(json.dumps(spec_dict))
+
+    # filter by severity
+    severity_dict = {}
+    for severity in ["P0", "P1", "P2", "P3"]:
+        severity_dict[severity] = str(len(filter_by_severity(dat, severity)))
+    with open('severity.json', 'w') as file:
+        file.write(json.dumps(severity_dict))
+        
