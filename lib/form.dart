@@ -27,6 +27,7 @@ class _ReportFormState extends State<ReportForm> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Container(
+            width: 300,
             child: Column(
               children: <Widget> [
                 Text(
@@ -35,7 +36,7 @@ class _ReportFormState extends State<ReportForm> {
                 ),
                 TextFormField(
                   keyboardType: TextInputType.multiline,
-                  maxLines: 10,
+                  maxLines: 5,
                   obscureText: false,
                   maxLength: 120,
                   decoration: InputDecoration(
@@ -48,6 +49,7 @@ class _ReportFormState extends State<ReportForm> {
             ),
           ),
           new Container(
+            width: 300,
             child: Column(
               children: <Widget> [
                 Text(
@@ -80,6 +82,7 @@ class _ReportFormState extends State<ReportForm> {
                   style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
                 ),
                 new Container(
+                  margin: EdgeInsets.all(12),
                   color: Colors.white,
                   child: DropdownButton<String>(
                     value: activityValue,
@@ -122,7 +125,7 @@ class _ReportFormState extends State<ReportForm> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                   Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
                       child: RaisedButton(
                         color: Colors.yellow,
                         onPressed: () {
@@ -136,7 +139,7 @@ class _ReportFormState extends State<ReportForm> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
                       child: RaisedButton(
                         onPressed: () {
                           // Validate will return true if the form is valid, or false if
@@ -200,7 +203,7 @@ class _ReportFormState extends State<ReportForm> {
           )
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 14.0),
           child: RaisedButton(
             onPressed: () {
               // Validate will return true if the form is valid, or false if
