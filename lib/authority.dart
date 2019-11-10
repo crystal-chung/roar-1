@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:roar/services/incidents_service.dart';
 
 class AuthorityRoute extends StatefulWidget {
   @override
@@ -46,6 +47,7 @@ class _MapState extends State<AuthorityRoute> {
 
   @override
   Widget build(BuildContext context) {
+    loadIncidents();
     return Scaffold(
       appBar: AppBar(
         title: Text("Tip Metrics"),
