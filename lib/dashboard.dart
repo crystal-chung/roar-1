@@ -4,6 +4,7 @@ import 'footer.dart';
 import 'title.dart';
 import 'report.dart';
 import 'authority.dart';
+import 'metrics.dart';
 import 'login_ranger.dart';
 
 class DashboardReport extends StatelessWidget {
