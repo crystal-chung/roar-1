@@ -105,7 +105,7 @@
     "loc_long": -118.0678921213124,
     "species": "sea turtle",
     "action": "human wildlife conflict",
-    "severity": "P3",
+    "severity": "P0",
     "status": "verified",
     "timestamp": "Jun 04 2019 03:02:42"
   },
@@ -160,7 +160,7 @@
     "loc_long": -95.16697255330274,
     "species": "gorilla",
     "action": "poaching",
-    "severity": "P1",
+    "severity": "P0",
     "status": "verified",
     "timestamp": "Jan 20 2019 01:24:55"
   },
@@ -292,7 +292,7 @@
     "loc_long": -115.31248133447107,
     "species": "sea turtle",
     "action": "poaching",
-    "severity": "P2",
+    "severity": "P0",
     "status": "submitted",
     "timestamp": "Feb 17 2019 22:10:20"
   },
@@ -358,7 +358,7 @@
     "loc_long": -69.90180773351744,
     "species": "other",
     "action": "human wildlife conflict",
-    "severity": "P3",
+    "severity": "P0",
     "status": "verified",
     "timestamp": "Jul 25 2019 21:50:52"
   },
