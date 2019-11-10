@@ -21,7 +21,7 @@ def iso_to_gregorian(iso_year, iso_week, iso_day):
     year_start = iso_year_start(iso_year)
     return year_start + timedelta(days=iso_day-1, weeks=iso_week-1)
 
-def filter_time(timeinterval, df):
+def filter_time(timeinterval, df, user_id = None):
     timeinterval = timeinterval.lower()
     currenttime = datetime.now()
 
@@ -50,14 +50,16 @@ def filter_time(timeinterval, df):
         print("not a valid time interval")
     if fil.empty:
         fil = "no reports within this time interval"
+    elif user_id is not None:
+        fil = df[df['user'] == user_id].drop(['dt_obj'], axis=1)
     return fil
 
 def number_submitted(timeinterval, df):
-	fil_df = filter_time(timeinterval, df)
+    fil_df = filter_time(timeinterval, df)
 
-	if isinstance(fil_df, str):
-		num_submitted = 0.0
-	else:
-		num_submitted = fil_df.shape[0]
-	return num_submitted
+    if isinstance(fil_df, str):
+        num_submitted = 0.0
+    else:
+        num_submitted = fil_df.shape[0]
+    return num_submitted
 
