@@ -3,6 +3,20 @@ import 'title.dart';
 import 'background.dart';
 import 'welcome.dart';
 
+class UserMeme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: new BoxDecoration(
+        image: DecorationImage(
+          image: new AssetImage('images/user_meme.jpg'),
+        ),
+        shape: BoxShape.rectangle,
+      ),
+    );
+  }
+}
+
 class MoreInfoRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,14 +24,7 @@ class MoreInfoRoute extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           BackGround(),
-          Padding(
-              padding: EdgeInsets.only(top: 70.0),
-              child: Align(
-                  alignment: Alignment.topCenter,
-                  child: RoarTitle()
-              )
-          ),
-          UserLogin(),
+          UserMeme(),
           Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Align(
@@ -33,7 +40,7 @@ class MoreInfoRoute extends StatelessWidget {
                           '< Back',
                           textAlign: TextAlign.left,
                           style: new TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 20.0
                           )
                       )
