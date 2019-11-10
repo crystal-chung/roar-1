@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
-import 'user.dart';
-import 'authority.dart';
-import 'community.dart';
 import 'report.dart';
 import 'background.dart';
+import 'login.dart';
+import 'signup.dart';
+import 'moreinfo.dart';
+
+class Title extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80.0,
+      width: 250.0,
+      decoration: new BoxDecoration(
+        image: DecorationImage(
+          image: new AssetImage('images/roar-logo-white.png'),
+        ),
+        shape: BoxShape.rectangle,
+      ),
+    );
+  }
+}
 
 class ReportHome extends StatelessWidget {
   @override
@@ -14,7 +30,6 @@ class ReportHome extends StatelessWidget {
             'TAP TO REPORT',
             textAlign: TextAlign.center,
             style: new TextStyle(
-                fontFamily: 'IBMPlexSans',
                 color: Colors.white,
                 fontSize: 40.0
             )
@@ -37,18 +52,59 @@ class ReportHome extends StatelessWidget {
   }
 }
 
-class Title extends StatelessWidget {
+class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80.0,
-      width: 250.0,
-      decoration: new BoxDecoration(
-        image: DecorationImage(
-          image: new AssetImage('images/roar-logo-white.png'),
-        ),
-        shape: BoxShape.rectangle,
-      ),
+    return new Container(
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginRoute()),
+              );
+            },
+            child: new Text(
+                'Log In',
+                style: new TextStyle(color: Colors.white),
+            ),
+          ),
+          new Text(
+              ' | ',
+              style: new TextStyle(color: Colors.white)
+          ),
+          new FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignUpRoute()),
+              );
+            },
+            child: new Text(
+              'Sign Up',
+              style: new TextStyle(color: Colors.white),
+            ),
+          ),
+          new Text(
+              ' | ',
+              style: new TextStyle(color: Colors.white)
+          ),
+          new FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MoreInfoRoute()),
+              );
+            },
+            child: new Text(
+              'More Info',
+              style: new TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      )
     );
   }
 }
@@ -73,51 +129,16 @@ class WelcomePage extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: Title()
               )
-            )
+            ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: NavBar(),
+            ),
+          )
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          children: <Widget>[
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ReportRoute()),
-                );
-              },
-              child: Text('Report'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AuthorityRoute()),
-                );
-              },
-              child: Text('Authority'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => UserRoute()),
-                );
-              },
-              child: Text('User'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CommunityRoute()),
-                );
-              },
-              child: Text('Community'),
-            )
-          ],
-        ),
-      ),
+      )
     );
   }
 }
