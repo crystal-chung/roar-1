@@ -103,3 +103,18 @@ def filter_by_state(dat, state_name, user_id=None):
     out_incidents = [dat['incident'].tolist()[i] for i in filter_list]
     return out_incidents
 
+
+def top_users_by_state(dat, state_name=None):
+    """
+    Return the top user(s) with most reported incidents given a state.
+    """
+    if state_name:
+        state_incidents = filter_by_state(dat, state_name)
+        dat = dat[dat['incident'].isin(state_incidents)]
+    count_by_user = dat['user'].value_counts().to_dict()
+    max_count = max(count_by_user.values())
+    max_users = []
+    for user in count_by_user.keys():
+        if count_by_user[user] == max_count:
+            max_users.append(user)
+    return max_users
