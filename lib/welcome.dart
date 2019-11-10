@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'report.dart';
 import 'background.dart';
-import 'login.dart';
-import 'signup.dart';
-import 'moreinfo.dart';
 import 'title.dart';
+import 'footer.dart';
 
 class ReportHome extends StatelessWidget {
   @override
@@ -37,63 +35,6 @@ class ReportHome extends StatelessWidget {
   }
 }
 
-class NavBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          new FlatButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginRoute()),
-              );
-            },
-            child: new Text(
-                'Log In',
-                style: new TextStyle(color: Colors.white),
-            ),
-          ),
-          new Text(
-              ' | ',
-              style: new TextStyle(color: Colors.white)
-          ),
-          new FlatButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SignUpRoute()),
-              );
-            },
-            child: new Text(
-              'Sign Up',
-              style: new TextStyle(color: Colors.white),
-            ),
-          ),
-          new Text(
-              ' | ',
-              style: new TextStyle(color: Colors.white)
-          ),
-          new FlatButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MoreInfoRoute()),
-              );
-            },
-            child: new Text(
-              'More Info',
-              style: new TextStyle(color: Colors.white),
-            ),
-          )
-        ],
-      )
-    );
-  }
-}
-
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -119,7 +60,7 @@ class WelcomePage extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 20.0),
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: NavBar(),
+              child: Footer(),
             ),
           )
         ],
