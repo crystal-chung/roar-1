@@ -10,6 +10,15 @@ class ReportHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        new Text(
+            'TAP TO REPORT',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                fontFamily: 'IBMPlexSans',
+                color: Colors.white,
+                fontSize: 40.0
+            )
+        ),
         new Container(
           height: 250.0,
           width: 250.0,
@@ -22,15 +31,6 @@ class ReportHome extends StatelessWidget {
             },
             child: Image.asset('images/buttons/roar-btn-report.png'),
           ),
-        ),
-        new Text(
-          'SEND A REPORT',
-          textAlign: TextAlign.center,
-          style: new TextStyle(
-            fontFamily: 'IBMPlexSans',
-            color: Colors.white,
-            fontSize: 40.0
-          )
         )
       ],
     );
@@ -45,7 +45,7 @@ class Title extends StatelessWidget {
       width: 250.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
-          image: new AssetImage('images/roar-logo-rev.png'),
+          image: new AssetImage('images/roar-logo-white.png'),
         ),
         shape: BoxShape.rectangle,
       ),
@@ -61,14 +61,14 @@ class WelcomePage extends StatelessWidget {
         children: <Widget>[
           BackGround(),
           Padding(
-            padding: EdgeInsets.only(top: 150.0),
+            padding: EdgeInsets.only(top: 250.0),
             child: Align(
               alignment: Alignment.center,
               child: ReportHome(),
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 20.0),
+              padding: EdgeInsets.only(top: 70.0),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Title()
