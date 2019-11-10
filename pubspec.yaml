@@ -58,7 +58,8 @@ flutter:
     - images/buttons/roar-btn-report.png
     - images/buttons/roar-btn-community.png
     - images/buttons/roar-btn-cash.png
-
+    - images/ranger_meme.jpg
+    - images/user_meme.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

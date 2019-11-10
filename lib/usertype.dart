@@ -35,7 +35,7 @@ class UserTypes extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         color: Colors.white,
-                        fontSize: 40.0
+                        fontSize: 30.0
                     )
                 )
               ],
@@ -60,7 +60,7 @@ class UserTypes extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         color: Colors.white,
-                        fontSize: 40.0
+                        fontSize: 30.0
                     )
                 )
               ],
