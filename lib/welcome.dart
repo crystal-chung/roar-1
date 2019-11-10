@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 import 'report.dart';
+import 'background.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'moreinfo.dart';
-
-class BackGround extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/roar-bg.png'),
-                    fit: BoxFit.fill))));
-  }
-}
 
 class Title extends StatelessWidget {
   @override

@@ -83,3 +83,5 @@ flutter:
       fonts:
         - asset: fonts/IBMPlexSans-Medium.ttf
         - asset: fonts/IBMPlexSans-Bold.ttf
+        - asset: fonts/IBMPlexSans-Italic.ttf
+          style: italic
