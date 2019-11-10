@@ -181,7 +181,7 @@ class CashoutRoute extends StatelessWidget {
                   child: Column(
                       children:<Widget>[
                         Text(
-                          '\$12',
+                          '\$17',
                           style: TextStyle(fontSize: 65),
                         )
                       ]
