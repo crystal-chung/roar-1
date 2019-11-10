@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'form.dart';
 import 'background.dart';
+import 'welcome.dart';
 
 class Title extends StatelessWidget {
   @override
@@ -31,6 +32,28 @@ class ReportRoute extends StatelessWidget {
                 child: Align(
                     alignment: Alignment.topCenter,
                     child: Title()
+                )
+            ),
+            Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => WelcomePage()),
+                          );
+                        },
+                        child: new Text(
+                            'Home',
+                            textAlign: TextAlign.left,
+                            style: new TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0
+                            )
+                        )
+                    )
                 )
             ),
             Align(

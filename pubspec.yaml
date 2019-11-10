@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^0.5.11
   uuid: 2.0.1
 
   # The following adds the Cupertino Icons font to your application.
@@ -26,8 +27,8 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+#  flutter_test:
+#    sdk: flutter
 
 
 # For information on the generic Dart part of this file, see the
@@ -47,9 +48,16 @@ flutter:
     - images/roar-bg.png
     - images/roar-logo-white.png
     - images/buttons/roar-btn-report.png
+    - analytics/mock_data_subset.json
+    - images/assets/roar-map-marker.png
     - images/headings/your-roars.png
     - resources/sample_incidents.json
     - images/assets/roar-dollar-lg.png
+    - images/headings/ranger-roar.png
+    - images/assets/roar-map-view.png
+    - images/buttons/roar-btn-report.png
+    - images/buttons/roar-btn-community.png
+    - images/buttons/roar-btn-cash.png
     - images/ranger_meme.jpg
     - images/user_meme.jpg
 

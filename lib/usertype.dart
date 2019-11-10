@@ -5,6 +5,7 @@ import 'package:roar/login_ranger.dart';
 import 'login.dart';
 import 'package:roar/user.dart';
 import 'title.dart';
+import 'welcome.dart';
 
 class UserTypes extends StatelessWidget {
   @override
@@ -17,8 +18,8 @@ class UserTypes extends StatelessWidget {
             Column(
               children: <Widget>[
                 new Container(
-                  height: 150.0,
-                  width: 150.0,
+                  height: 200.0,
+                  width: 200.0,
                   child: FlatButton(
                     onPressed: () {
                       Navigator.push(
@@ -42,8 +43,8 @@ class UserTypes extends StatelessWidget {
             Column(
               children: <Widget>[
                 new Container(
-                  height: 150.0,
-                  width: 150.0,
+                  height: 200.0,
+                  width: 200.0,
                   child: FlatButton(
                     onPressed: () {
                       Navigator.push(
@@ -82,6 +83,28 @@ class UserTypeRoute extends StatelessWidget {
               child: Align(
                   alignment: Alignment.topCenter,
                   child: RoarTitle()
+              )
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WelcomePage()),
+                        );
+                      },
+                      child: new Text(
+                          'Home',
+                          textAlign: TextAlign.left,
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0
+                          )
+                      )
+                  )
               )
           ),
           Padding(

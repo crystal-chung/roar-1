@@ -18,10 +18,12 @@ class ListItem extends StatelessWidget {
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text(items[index]["date"] + ":",
-              style: TextStyle(color: Colors.yellow)),
+            Text(items[index]["date"] + ": ",
+              style: TextStyle(color: Colors.yellow,
+                  fontSize: 20.0)),
             Text(items[index]["type"],
-              style: TextStyle(color: Colors.white)),
+              style: TextStyle(color: Colors.white,
+                  fontSize: 20.0)),
           ],
         )
       );
