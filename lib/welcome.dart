@@ -38,13 +38,15 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 20.0,
+      width: 100.0,
       decoration: new BoxDecoration(
         image: DecorationImage(
           image: new AssetImage('images/roar-logo-rev.png'),
         ),
         shape: BoxShape.rectangle,
       ),
-      alignment: FractionalOffset(1.0, 0.0),
+      alignment: Alignment.topCenter,
     );
   }
 }
@@ -57,7 +59,9 @@ class WelcomePage extends StatelessWidget {
         children: <Widget>[
           BackGround(),
           ReportHome(),
-          Title()
+          Center(
+              child: Title()
+          )
         ],
       ),
       bottomNavigationBar: BottomAppBar(
