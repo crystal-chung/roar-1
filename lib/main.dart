@@ -9,6 +9,7 @@ class RoarApp extends StatelessWidget {
     return MaterialApp(
       title: 'Roar',
       theme: ThemeData(
+        fontFamily: 'IBMPlexSans'
       ),
       home: WelcomePage(),
     );

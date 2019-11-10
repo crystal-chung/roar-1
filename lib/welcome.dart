@@ -3,18 +3,7 @@ import 'user.dart';
 import 'authority.dart';
 import 'community.dart';
 import 'report.dart';
-
-class BackGround extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/roar-bg.png'),
-                    fit: BoxFit.fill))));
-  }
-}
+import 'background.dart';
 
 class ReportHome extends StatelessWidget {
   @override
