@@ -15,3 +15,19 @@ class RoarTitle extends StatelessWidget {
     );
   }
 }
+
+class YourRoar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80.0,
+      width: 250.0,
+      decoration: new BoxDecoration(
+        image: DecorationImage(
+          image: new AssetImage('images/headings/your-roars.png'),
+        ),
+        shape: BoxShape.rectangle,
+      ),
+    );
+  }
+}

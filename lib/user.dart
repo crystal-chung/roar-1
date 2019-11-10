@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/IncidentList.dart';
+import 'background.dart';
+import 'title.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -43,26 +45,62 @@ class UserRoute extends StatelessWidget {
 //    String contents = getStuff();
 //    print(contents);
     return Scaffold(
-      appBar: AppBar(
-        title: Text("User, bitches."),
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget> [
-            RaisedButton(
-              onPressed: (){
-              },
-              child: Text('Report Incident')
+        body: Stack(
+          children: <Widget>[
+            BackGround(),
+            Padding(
+              padding: EdgeInsets.only(top: 70.0),
+              child: Align(
+                  alignment: Alignment.topCenter,
+                  child: YourRoar()
+              )
             ),
-            ListItem(),
-            RaisedButton(
-                onPressed: (){
-                },
-                child: Text('Community Analytics')
-            ),
-          ]
+        Padding(
+            padding: EdgeInsets.only(top: 120),
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                  width: 400,
+                  child: Column (
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Username",
+                          style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30)
+                      ),
+                      Text("HACKS4SNACKS",
+                          style: TextStyle(color: Colors.yellow, fontSize: 30)
+                      )
+                    ]
+                  )
+              ),
+            )
         ),
-      ),
+            Padding(
+                padding: EdgeInsets.only(),
+                child: Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                        width: 400,
+                        child:  Wrap (
+                            runSpacing: -60,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text("Report History",
+                                    style: TextStyle(color: Colors.yellow, fontWeight: FontWeight.bold, fontSize: 20)
+                                )
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: ListItem(),
+                              )
+                            ]
+                        )
+                    )
+                )
+            )
+          ],
+        )
     );
   }
 }
