@@ -17,8 +17,8 @@ class UserTypes extends StatelessWidget {
             Column(
               children: <Widget>[
                 new Container(
-                  height: 250.0,
-                  width: 250.0,
+                  height: 150.0,
+                  width: 150.0,
                   child: FlatButton(
                     onPressed: () {
                       Navigator.push(
@@ -34,7 +34,7 @@ class UserTypes extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         color: Colors.white,
-                        fontSize: 40.0
+                        fontSize: 30.0
                     )
                 )
               ],
@@ -42,8 +42,8 @@ class UserTypes extends StatelessWidget {
             Column(
               children: <Widget>[
                 new Container(
-                  height: 250.0,
-                  width: 250.0,
+                  height: 150.0,
+                  width: 150.0,
                   child: FlatButton(
                     onPressed: () {
                       Navigator.push(
@@ -59,7 +59,7 @@ class UserTypes extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         color: Colors.white,
-                        fontSize: 40.0
+                        fontSize: 30.0
                     )
                 )
               ],
