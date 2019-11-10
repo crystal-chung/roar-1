@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
-import 'user.dart';
-import 'authority.dart';
-import 'community.dart';
+import 'background.dart';
+import 'footer.dart';
+import 'title.dart';
 import 'report.dart';
-
-class BackGround extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/roar-bg.png'),
-                    fit: BoxFit.fill))));
-  }
-}
 
 class ReportHome extends StatelessWidget {
   @override
@@ -25,7 +13,6 @@ class ReportHome extends StatelessWidget {
             'TAP TO REPORT',
             textAlign: TextAlign.center,
             style: new TextStyle(
-                fontFamily: 'IBMPlexSans',
                 color: Colors.white,
                 fontSize: 40.0
             )
@@ -48,22 +35,6 @@ class ReportHome extends StatelessWidget {
   }
 }
 
-class Title extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 80.0,
-      width: 250.0,
-      decoration: new BoxDecoration(
-        image: DecorationImage(
-          image: new AssetImage('images/roar-logo-white.png'),
-        ),
-        shape: BoxShape.rectangle,
-      ),
-    );
-  }
-}
-
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -82,53 +53,18 @@ class WelcomePage extends StatelessWidget {
               padding: EdgeInsets.only(top: 70.0),
               child: Align(
                 alignment: Alignment.topCenter,
-                child: Title()
+                child: RoarTitle()
               )
-            )
+            ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Footer(),
+            ),
+          )
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          children: <Widget>[
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ReportRoute()),
-                );
-              },
-              child: Text('Report'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AuthorityRoute()),
-                );
-              },
-              child: Text('Authority'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => UserRoute()),
-                );
-              },
-              child: Text('User'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CommunityRoute()),
-                );
-              },
-              child: Text('Community'),
-            )
-          ],
-        ),
-      ),
+      )
     );
   }
 }
