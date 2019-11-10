@@ -1,29 +1,7 @@
 import 'package:flutter/material.dart';
 import 'title.dart';
 import 'background.dart';
-
-//class SignUpRoute extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      appBar: AppBar(
-//        title: Text("Login, bitches."),
-//      ),
-//      body: Center(
-//        child: RaisedButton(
-//          onPressed: () {
-//            Navigator.pop(context);
-//          },
-//          child: Text('Home'),
-//        ),
-//      ),
-//    );
-//  }
-//}
-
-
-
-
+import 'welcome.dart';
 
 class SignUpRoute extends StatelessWidget {
   @override
@@ -39,7 +17,29 @@ class SignUpRoute extends StatelessWidget {
                   child: RoarTitle()
               )
           ),
-          RangerLogin()
+          RangerLogin(),
+          Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WelcomePage()),
+                        );
+                      },
+                      child: new Text(
+                          '< Back',
+                          textAlign: TextAlign.left,
+                          style: new TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0
+                          )
+                      )
+                  )
+              )
+          ),
         ]
       )
     );

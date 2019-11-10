@@ -100,7 +100,7 @@ class UserRoute extends StatelessWidget {
                               fontSize: 35)
                       ),
                       Wrap (
-                          runSpacing: -60,
+                          runSpacing: -50,
                           children: <Widget>[
                             Padding(
                                 padding: EdgeInsets.only(top: 13.0),
@@ -111,8 +111,11 @@ class UserRoute extends StatelessWidget {
                                         fontSize: 17)
                                 )
                             ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
                             Padding(
-                              padding: EdgeInsets.only(top: 15.0),
+                              padding: EdgeInsets.only(top: 50.0),
                               child: ListItem(),
                             )
                           ]
