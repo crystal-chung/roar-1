@@ -19,14 +19,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^0.5.11
+  uuid: 2.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  flutter_launcher_icons: "^0.7.3"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/roar-icon.png"
 
 
 # For information on the generic Dart part of this file, see the
@@ -43,6 +49,26 @@ flutter:
     - images/rhino.jpeg
     - images/roar-icon.png
     - images/roar-logo.png
+    - images/roar-bg.png
+    - images/roar-logo-white.png
+    - images/buttons/roar-btn-report.png
+    - analytics/mock_data_subset.json
+    - images/assets/roar-map-marker.png
+    - images/headings/your-roars.png
+    - resources/sample_incidents.json
+    - images/assets/roar-dollar-lg.png
+    - images/headings/ranger-roar.png
+    - images/assets/roar-map-view.png
+    - images/buttons/roar-btn-report.png
+    - images/buttons/roar-btn-community.png
+    - images/buttons/roar-btn-cash.png
+    - images/buttons/roar-btn-profile.png
+    - images/buttons/roar-btn-user.png
+    - images/ranger_meme.jpg
+    - images/user_meme.jpg
+    - images/assets/roar-circle-bg.png
+    - images/assets/roar-circle-sm.png
+    - images/headings/join-roar.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -74,3 +100,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: fonts/IBMPlexSans-Medium.ttf
+        - asset: fonts/IBMPlexSans-Bold.ttf
+        - asset: fonts/IBMPlexSans-Italic.ttf
+          style: italic
