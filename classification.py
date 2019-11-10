@@ -46,6 +46,7 @@ def classify(path_to_image):
     if index in name_mapper.keys():
         return name_mapper[index]
     else:
-        return index, 'other'
+        print(index)
+        return 'other'
 
 
